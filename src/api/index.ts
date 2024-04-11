@@ -1,0 +1,1 @@
+export { getMatchByFullname } from './match';
