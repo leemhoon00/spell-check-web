@@ -3,5 +3,5 @@ import Game from './game/index.svelte';
 
 export const routes = {
   '/': Home,
-  '/:hash': Game,
+  '/:matchId': Game,
 };

@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { push } from 'svelte-spa-router';
   import { getMatchByFullname } from '@src/api';
   async function submitEvent() {
-    console.log('aaa');
     const fullname = (document.querySelector('input') as HTMLInputElement)
       .value;
     if (!fullname) return;
@@ -11,6 +11,7 @@
     }
     try {
       const match = await getMatchByFullname(fullname);
+      push(`/${match.id}`);
     } catch (e) {
       if (e instanceof Error) {
         if (e.message === 'User Not Found') {
